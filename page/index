@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	    <title>Đọc truyện cho trẻ</title>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  	<link href="../css/_index.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body style="width: 100%">
+  	<div class="top_content" >
+  	 <img src="../data/picture/Vector-High-Quality-PNG.png" style="width: 37em; margin-left: 28%">
+     <div class='top_menu'>
+       <ul class="nav justify-content-center">
+        <li class="nav-item" style="    margin-right: 20px;">
+          <!-- <a class="nav-link active" href="#"> Truyện Cổ Tích </a> -->
+          <audio id="cotich" src="../data/voice/cotich.m4a"></audio>
+          <button style="background: none; border: hidden;" onmouseover="document.getElementById('cotich').play()">
+            <img src="../data/picture/buttons_PNG34.png" style="width: 130px; height: 52px">
+          </button>
+        </li>
+        <li class="nav-item" style="    margin-right: 20px;">
+          <!-- <a class="nav-link" href="#">Truyện Dân gian</a> -->
+          <audio id="dangian" src="../data/voice/dangian.m4a"></audio>
+          <button style="background: none; border: hidden;" onmouseover="document.getElementById('dangian').play()">
+            <img src="../data/picture/buttons_PNG433.png" style="width: 130px;     height: 52px">
+          </button>
+        </li>
+        <li class="nav-item" style="    margin-right: 20px;">
+          <!-- <a class="nav-link" href="#">Truyện Hiện Đại</a> -->
+          <audio id="truyenhiendai" src="../data/voice/truyenhiendai.m4a"></audio>
+          <button style="background: none; border: hidden;" onmouseover="document.getElementById('truyenhiendai').play()">
+            <img src="../data/picture/buttons_PNG47.png" style="width: 130px; height: 50px;">
+          </button>
+        </li>
+        <li class="nav-item" style="    margin-right: 20px;">
+          <!-- <a class="nav-link" href="#">Tập Thơ</a> -->
+          <audio id="taptho" src="../data/voice/taptho.m4a"></audio>
+          <button style="background: none; border: hidden;" onmouseover="document.getElementById('taptho').play()">
+            <img src="../data/picture/buttons_PNG51.png" style="width: 130px;">
+          </button>
+        </li>
+      </ul>
+     </div>
+     <div class="main_content" style="width: 74%;
+          margin-top: 1em;
+          height: 36em !important;
+          background-image: url(../data/picture/u3.png) ;
+          background-size: cover;
+          position: relative;
+          margin-left: 13%;
+          background-repeat: no-repeat;
+          z-index: 1;">
+          <div class="container" style="padding-top: 6em ; padding-left: 11em ;padding-right: 9em;">
+            <div class="row" style="margin-bottom: 2em">
+              <div class="col">
+                <img src="../data/images/home/u13.png" style="width: 11em;">
+              </div>
+              <div class="col">
+                <img src="../data/images/home/u4.png" style="width: 11em;">
+              </div>
+              <div class="col">
+               <img src="../data/images/home/u5.png" style="width: 11em;">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+               <img src="../data/images/home/u14.png" style="width: 11em;">
+              </div>
+              <div class="col">
+               <img src="../data/images/home/u15.png" style="width: 11em;">
+              </div>
+              <div class="col">
+                <img src="../data/images/home/u16.png" style="width: 11em;">
+              </div>
+            </div>
+          </div>
+     </div>
+    </div>
+
+    <div class="bottom_content">
+      
+    </div>
+  	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+  </html>
