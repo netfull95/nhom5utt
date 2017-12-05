@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   	<link href="css/_index.css" type="text/css" rel="stylesheet"/>
-  	<link href="css/_index.scss" type="text/scss" rel="stylesheet"/>
+  	<!-- <link href="css/_index.scss" type="text/scss" rel="stylesheet"/> -->
   </head>
   <body style="width: 100%">
-	<div style="" id="nightmode" >
+	<div id="nightmode" >
     </div>				
 	  	<!-- modal -->
 			<div class="modal fade"  id="myModal" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -81,27 +81,36 @@
 			</div>
 	<!--  -->
 
-  	<div class="top_content" id='topContent'>
+  	<div class="top_content" id='topContent' style=" width: 100%;
+	height: 1000px;
+	position: relative;
+    z-index: 1;
+    background-image: url(data/picture/bg2.png) ;
+   	background-repeat: repeat-x;
+   	opacity: 1 !important">
   		<div class="container">
 		  <div class="row">
 		    <div class="col">
-		     	<img src="data/picture/u23.png" id="imgSunMoon" onclick="changeSetting()" style="width: 13em; margin-left: -29%; margin-top: 5em; cursor: pointer;">
+		     	<img src="data/picture/u23.png" id="imgSunMoon" data-toggle="tooltip" data-placement="top" title="Thay đổi chế dộ xem" onclick="changeSetting()" style="width: 13em; margin-left: -29%; margin-top: 5em; cursor: pointer;">
 		    </div>
 		    <div class="col-6">
   	 			<img src="data/picture/Vector-High-Quality-PNG.png" style="width: 37em">
 		    </div>
 		    <div class="col">
-		     	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-whatever="@mdo">
+          		<audio id="dangnhap" src="data/voice/Đăng nhập.m4a"></audio>
+		     	<button type="button" class="btn btn-primary" onmouseover="document.getElementById('dangnhap').play()" data-toggle="modal" data-target="#myModal" data-whatever="@mdo">
 		     		Đăng nhập / Đăng ký
 		     	</button>
-				<button onclick="pauseAudioIntro()" type="button" style="background: none; border: none; ;">
+
+		     	<audio id="mute" src="data/voice/Tắt âm thanh.m4a"></audio>
+				<button type="button" data-toggle="tooltip" data-placement="bottom" title="Tắt âm thanh" onclick="pauseAudioIntro()" onmouseover="document.getElementById('mute').play()" type="button" style="background: none; border: none; ;">
 		     		<img src="data/picture/mute.ico" style="width: 2em; margin-left: 1em;" >
 		     	</button>
 		     	<img src="data/picture/u24.png" style="width: 16em; margin-left: 46%; margin-top: 2em;">
 		    </div>
 		  </div>
 		</div>
-
+	
 		<!--  -->
      <div class='top_menu'>
        <ul class="nav justify-content-center">
@@ -179,11 +188,18 @@
      <audio id="myAudioIntro">
       <source src="data/audio/intro/Sóc nhí - Trang chủ_2.mp3" type="audio/mpeg" > </source>
     </audio>
+    <audio id="nightmodeOn" src="data/voice/chế độ ban đêm.m4a"></audio>
+    <audio id="nightmodeOff" src="data/voice/chế độ ban ngày.m4a"></audio>
+	
+
 
     <script>
    
 	    var x = document.getElementById("myAudioIntro"); 
 	    var y = document.getElementById("myAudio1"); 
+	    var nightmodeOn = document.getElementById("nightmodeOn");
+	    var nightmodeOff = document.getElementById("nightmodeOff");
+
     	if (window.location.href == "http://localhost:8080/nhom5utt/") {
     		x.play();
     		y.play();
@@ -199,25 +215,27 @@
 	    	if (document.getElementById("imgSunMoon").src == "http://localhost:8080/nhom5utt/data/picture/u23.png") {
 	    		document.getElementById("imgSunMoon").src = "http://localhost:8080/nhom5utt/data/images/home/moon.png";
 	    		document.getElementById("nightmode").style = "position: fixed; width: 100vw; height: 100vh; z-index: 9999999; background: rgba(214, 162, 22, 0.46); pointer-events: none;";
+	    		nightmodeOn.play();
 	    	} else {
 	    		document.getElementById("nightmode").style = "display: none";
 	    		document.getElementById("imgSunMoon").src = "http://localhost:8080/nhom5utt/data/picture/u23.png";
+	    		nightmodeOff.play();
 
 	    		// nightmode(false);
 	    	}
 	    }
 
-	    function nightmode(value) {
-	    		console.log('vao day roscscsi');
+	    // function nightmode(value) {
+	    // 		console.log('vao day roscscsi');
 
-	    	if (value) {
-	    		console.log('true');
-	    		$('#topContent').removeClass('top_content').addClass('top_content2');
-	    	} else {
-	    		console.log('false');
-	    		$('#topContent').removeClass('top_content2').addClass('top_content');
-	    	}
-	    }
+	    // 	if (value) {
+	    // 		console.log('true');
+	    // 		$('#topContent').removeClass('top_content').addClass('top_content2');
+	    // 	} else {
+	    // 		console.log('false');
+	    // 		$('#topContent').removeClass('top_content2').addClass('top_content');
+	    // 	}
+	    // }
     </script>
 
 
