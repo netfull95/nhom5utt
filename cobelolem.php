@@ -84,14 +84,14 @@
        <div class="container">
         <div class="row">
           <div class="col">
-            <img src="data/picture/u23.png" style="width: 13em; margin-left: -29%; margin-top: 5em;">
+            <img src="data/picture/u23.png" style="width: 13em; margin-left: -29%; margin-top: 5em; cursor: pointer;">
           </div>
           <div class="col-6">
-            <img src="data/picture/Vector-High-Quality-PNG.png" style="width: 37em">
+            <img src="data/picture/Vector-High-Quality-PNG.png" href="http://localhost:8080/nhom5utt/" style="cursor: pointer; ,width: 37em">
           </div>
           <div class="col">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-whatever="@mdo">Đăng nhập / Đăng ký</button>
-            <img src="data/picture/u24.png" style="width: 16em; margin-left: 46%; margin-top: 2em;">
+            <img src="data/picture/u24.png" style="width: 16em; margin-left: 46%; margin-top: 2em; cursor: pointer;">
           </div>
         </div>
       </div>
@@ -175,11 +175,72 @@
             </div>
           </div>
      </div>
-     <div style="margin-left: 51em;"> 
-      <button onclick="playAudio()" type="button" style="background: none; border: none;"> <img  src="data/picture/Play.png"  style="width: 40px;"></button>
-      <button onclick="pauseAudio()" type="button" style="background: none; border: none; ;"> <img src="data/picture/Pause.png" style="width: 40px;"></button> 
-      <button onclick="reloadAudio()" type="button" style="background: none; border: none; ;"> <img src="data/picture/Load.png" style="width: 40px;"></button> 
+     <div style="margin-left: 51em; margin-top: -8em;"> 
+      <button onclick="playAudio()" type="button" style="background: none; border: none; cursor: pointer;"> <img  src="data/picture/Play.png"  style="width: 40px;"></button>
+      <button onclick="pauseAudio()" type="button" style="background: none; border: none; cursor: pointer;"> <img src="data/picture/Pause.png" style="width: 40px;"></button> 
+      <button onclick="reloadAudio()" type="button" style="background: none; border: none;cursor: pointer;"> <img src="data/picture/Load.png" style="width: 40px;"></button> 
+      <button onclick="playAudioThanDen()" style="background: none; border: none;cursor: pointer;" data-toggle="modal" data-target="#thandenModal">
+        <img src="data/picture/thanden.gif">
+      </button>
     </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="thandenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">Thần đèn thách đố</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="carouselExampleControls11111" class="carousel slide" pause="false" ride="false" wrap='false' data-interval="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a><h3>Bà tiên đã tặng gì cho cô bé lọ lem ?</h3></a>
+                </br>
+                  <button onclick="quest(1,`a`)" id="1a" type="button" class="btn btn-lg btn-block btn-outline-primary">A. Chổi thần</button> 
+                  <button onclick="quest(1,`b`)" id="1b" type="button" class="btn btn-lg btn-block btn-outline-primary">B. Đũa thần</button> 
+                  <button onclick="quest(1,`c`)" id="1c"  type="button" class="btn btn-lg btn-block btn-outline-primary">C. Giày thủy tinh</button> 
+                </div>
+                <div class="carousel-item">
+                  <!-- <img class="d-block w-100" src="..." alt="Second slide"> -->
+                  <a><h3>Cô bé lọ lem phải trở về nhà lúc nào ?</h3></a>
+                  </br>
+                  <button onclick="quest(2,`a`)" id="2a" type="button" class="btn btn-lg btn-block btn-outline-primary">A. 11 giờ đêm</button> 
+                  <button onclick="quest(2,`b`)" id="2b" type="button" class="btn btn-lg btn-block btn-outline-primary">B. 12 giờ đêm</button> 
+                  <button onclick="quest(2,`c`)" id="2c"  type="button" class="btn btn-lg btn-block btn-outline-primary">C. Quên đường về</button> 
+                </div>
+                <div class="carousel-item">
+                  <!-- <img class="d-block w-100" src="..." alt="Third slide"> -->
+                   <a><h3>Hoàng tử tìm thấy cô bé lọ lem hay không ?</h3></a>
+                  </br>
+                  <button onclick="quest(3,`a`)" id="3a" type="button" class="btn btn-lg btn-block btn-outline-primary">A. Có tìm thấy</button> 
+                  <button onclick="quest(3,`b`)" id="3b" type="button" class="btn btn-lg btn-block btn-outline-primary">B. Không tim thấy</button> 
+                  <button onclick="quest(3,`c`)" id="3c"  type="button" class="btn btn-lg btn-block btn-outline-primary">C. Không cần tìm</button> 
+                </div>
+                <div class="carousel-item">
+                  <!-- <img class="d-block w-100" src="..." alt="Third slide"> -->
+                  <a><h3 style='text-align: center;''>Chúc mừng bé đã hoàn thành thử thách của Thần Đèn !</h3></a>
+                  </br>
+                  <img style="margin-left: 12%;" src="data/picture/cup.png">
+                </div>
+              </div>
+            </div>
+          </div>
+          <img src="data/picture/thanden.png" style="margin-left: -18em;
+    margin-top: -333px;
+    width: 19em;">
+          <div class="modal-footer">          
+            <button id="button_next" 
+              #href="#carouselExampleControls" #data-slide="next" #role="button"
+              onclick="nextQuest()" 
+              disabled="true" class="btn btn-primary">Câu tiếp theo >>></button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="bottom_content" style="margin-top: -16em;">
@@ -189,9 +250,15 @@
     <audio id="myAudio" autoplay="true">
       <source src="data/audio/lolem/lolem1.mp3" type="audio/mpeg" > </source>
     </audio>
-  
+    
 
     <script>
+
+    function nextQuest() {
+      $('#carouselExampleControls11111').carousel('next');
+      document.getElementById("button_next").disabled = true;
+    } 
+
     var x = document.getElementById("myAudio"); 
 
     function playAudio() { 
@@ -205,6 +272,78 @@
     function reloadAudio() {
         x.load();
         x.play();
+    }
+
+    function playAudioThanDen() {
+      x.pause();
+      // than den thach do
+    }
+
+    function quest(index,value) {
+      console.log('quest')
+      switch(index) {
+        case 1:
+
+          document.getElementById("button_next").disabled = false;
+          right(index,'c');
+          fail(index,'b');
+          fail(index,'a');
+          if (value == "c") {
+            console.log('tra loi dung');
+            // be tr loi dung roi
+            
+          } else {
+            console.log('tra loi sai');
+            // be tra loi sai
+
+          }
+          break;
+        case 2: 
+         document.getElementById("button_next").disabled = false;
+          right(index,'b');
+          fail(index,'c');
+          fail(index,'a');
+          if (value == "b") {
+            console.log('tra loi dung');
+            // be tr loi dung roi
+            
+          } else {
+            console.log('tra loi sai');
+            // be tra loi sai
+
+          }
+          break;
+        case 3: 
+          document.getElementById("button_next").disabled = false;
+          $("#button_next").text("Kết thúc");
+          // $("#button_next").onclick(hide());
+
+          right(index,'a');
+          fail(index,'c');
+          fail(index,'b');
+          if (value == "a") {
+            console.log('tra loi dung');
+            // be tr loi dung roi
+            
+          } else {
+            console.log('tra loi sai');
+            // be tra loi sai
+
+          }
+          break;
+        default:
+        
+
+      }
+  }
+
+    function right(index,value){
+      console.log('value', index)
+      $('#'+ index + value).removeClass('btn btn-lg btn-block btn-outline-primary').addClass('btn btn-lg btn-block btn-success');
+    }
+
+    function fail(index,value){
+      $('#'+ index + value).removeClass('btn btn-lg btn-block btn-outline-primary').addClass('btn btn-lg btn-block btn-danger');
     }
     </script>
     

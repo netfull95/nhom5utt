@@ -9,7 +9,9 @@
   	<link href="css/_index.scss" type="text/scss" rel="stylesheet"/>
   </head>
   <body style="width: 100%">
-  	<!-- modal -->
+	<div style="" id="nightmode" >
+    </div>				
+	  	<!-- modal -->
 			<div class="modal fade"  id="myModal" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-dialog">
 			    <div class="modal-content" style="background-image: url('data/picture/u130.png'); ">
@@ -79,11 +81,11 @@
 			</div>
 	<!--  -->
 
-  	<div class="top_content">
+  	<div class="top_content" id='topContent'>
   		<div class="container">
 		  <div class="row">
 		    <div class="col">
-		     	<img src="data/picture/u23.png" style="width: 13em; margin-left: -29%; margin-top: 5em;">
+		     	<img src="data/picture/u23.png" id="imgSunMoon" onclick="changeSetting()" style="width: 13em; margin-left: -29%; margin-top: 5em; cursor: pointer;">
 		    </div>
 		    <div class="col-6">
   	 			<img src="data/picture/Vector-High-Quality-PNG.png" style="width: 37em">
@@ -130,7 +132,7 @@
             </a>	
           </button>
         </li>
-        <li class="nav-item" style="    margin-right: 20px;">
+        <li class="nav-item" style="margin-right: 20px;">
           <!-- <a class="nav-link" href="#">Tập Thơ</a> -->
           <audio id="taptho" src="data/voice/taptho.m4a"></audio>
           <button style="background: none; border: hidden;" onmouseover="document.getElementById('taptho').play()">
@@ -150,7 +152,16 @@
           margin-left: 13%;
           background-repeat: no-repeat;
           z-index: 1;">
-          <div class="container" style="padding-top: 6em ; padding-left: 11em ;padding-right: 9em;">
+          <div style="    width: 12em; margin-left: 41em; padding-top: 4em;">
+          	<!-- <img src="data/picture/search.png"> -->
+          	<input type="text" class="form-control" placeholder="Tìm kiếm" name="" style="background-color: white;
+			    background-image: url('data/picture/search.png');
+			    background-position: 10px 10px; 
+			    background-repeat: no-repeat;
+			    padding-left: 40px; border-radius: 9.25rem !important;">
+
+          </div>
+          <div class="container" style="padding-top: 1em ; padding-left: 11em ;padding-right: 9em;">
         	<?php
 				include("content.php");
 			?>
@@ -161,19 +172,52 @@
     <div class="bottom_content" style="margin-top: -16em;">
       	<img src="data/picture/u22.png" style="width: 310px; margin-top: 11em; margin-left: 8em;">
     </div>
-	<audio id="myAudio1" autoplay="true">
+		
+	<audio id="myAudio1" >
       <source src="data/audio/intro/Sóc nhí - Trang chủ_4.mp3" type="audio/mpeg" > </source>
     </audio>
-     <audio id="myAudioIntro" autoplay="true">
+     <audio id="myAudioIntro">
       <source src="data/audio/intro/Sóc nhí - Trang chủ_2.mp3" type="audio/mpeg" > </source>
     </audio>
 
     <script>
-    var x = document.getElementById("myAudioIntro"); 
+   
+	    var x = document.getElementById("myAudioIntro"); 
+	    var y = document.getElementById("myAudio1"); 
+    	if (window.location.href == "http://localhost:8080/nhom5utt/") {
+    		x.play();
+    		y.play();
+    	}
 
-    function pauseAudioIntro() { 
-        x.pause(); 
-    } 
+
+	    function pauseAudioIntro() { 
+	        x.pause(); 
+	    } 
+
+	    function changeSetting() {
+	    	console.log('vao day', document.getElementById("imgSunMoon").src)
+	    	if (document.getElementById("imgSunMoon").src == "http://localhost:8080/nhom5utt/data/picture/u23.png") {
+	    		document.getElementById("imgSunMoon").src = "http://localhost:8080/nhom5utt/data/images/home/moon.png";
+	    		document.getElementById("nightmode").style = "position: fixed; width: 100vw; height: 100vh; z-index: 9999999; background: rgba(214, 162, 22, 0.46); pointer-events: none;";
+	    	} else {
+	    		document.getElementById("nightmode").style = "display: none";
+	    		document.getElementById("imgSunMoon").src = "http://localhost:8080/nhom5utt/data/picture/u23.png";
+
+	    		// nightmode(false);
+	    	}
+	    }
+
+	    function nightmode(value) {
+	    		console.log('vao day roscscsi');
+
+	    	if (value) {
+	    		console.log('true');
+	    		$('#topContent').removeClass('top_content').addClass('top_content2');
+	    	} else {
+	    		console.log('false');
+	    		$('#topContent').removeClass('top_content2').addClass('top_content');
+	    	}
+	    }
     </script>
 
 
